@@ -19,7 +19,7 @@ import io.askhole.QuestionDiffCallback
 import io.askhole.QuestionList
 import io.askhole.R
 
-class MainActivity : AppCompatActivity(), CardStackListener {
+class SwipeActivity : AppCompatActivity(), CardStackListener {
 
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity(), CardStackListener {
 
     companion object {
         fun newInstance(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
+            return Intent(context, SwipeActivity::class.java)
         }
     }
 

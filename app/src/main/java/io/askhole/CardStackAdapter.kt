@@ -7,7 +7,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.makeramen.roundedimageview.RoundedImageView
-import io.askhole.Question.Companion.QuestionType.*
+import io.askhole.database.models.Question
+import io.askhole.database.models.Question.QuestionType.*
 
 
 class CardStackAdapter(
@@ -46,7 +47,7 @@ class CardStackAdapter(
     }
 
     companion object {
-        fun questionColor(type: Question.Companion.QuestionType): Int {
+        fun questionColor(type: Question.QuestionType): Int {
             return when(type) {
                 UNCLASSIFIED -> R.color.borderUnclassified
                 GENERIC -> R.color.borderGeneric

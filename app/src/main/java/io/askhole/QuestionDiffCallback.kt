@@ -1,6 +1,7 @@
 package io.askhole
 
 import androidx.recyclerview.widget.DiffUtil
+import io.askhole.database.models.Question
 
 class QuestionDiffCallback(
     private val old: List<Question>,

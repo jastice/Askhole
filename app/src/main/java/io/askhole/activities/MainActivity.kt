@@ -1,5 +1,7 @@
-package io.askhole
+package io.askhole.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -12,13 +14,23 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DiffUtil
 import com.yuyakaido.android.cardstackview.*
+import io.askhole.CardStackAdapter
+import io.askhole.QuestionDiffCallback
+import io.askhole.QuestionList
+import io.askhole.R
 
 class MainActivity : AppCompatActivity(), CardStackListener {
 
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
-    private val adapter by lazy { CardStackAdapter(QuestionList.randomQuestions(10)) }
+    private val adapter by lazy {
+        CardStackAdapter(
+            QuestionList.randomQuestions(
+                10
+            )
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +72,10 @@ class MainActivity : AppCompatActivity(), CardStackListener {
     private fun setupNavigation() {
 
         // DrawerLayout
-        val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer)
+        val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout,
+            R.string.open_drawer,
+            R.string.close_drawer
+        )
         actionBarDrawerToggle.syncState()
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
 
@@ -125,5 +140,10 @@ class MainActivity : AppCompatActivity(), CardStackListener {
         result.dispatchUpdatesTo(adapter)
     }
 
+    companion object {
+        fun newInstance(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+    }
 
 }

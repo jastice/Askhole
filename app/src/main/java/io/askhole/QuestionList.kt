@@ -1,7 +1,8 @@
 package io.askhole
 
+import io.askhole.database.models.Question
+import io.askhole.database.models.Question.QuestionType.*
 import kotlin.random.Random
-import io.askhole.Question.Companion.QuestionType.*
 
 
 class QuestionList {
@@ -9,7 +10,7 @@ class QuestionList {
 
     companion object {
 
-        data class Q(val text: String, val type: Question.Companion.QuestionType)
+        data class Q(val text: String, val type: Question.QuestionType)
 
 
         val questions = listOf(
@@ -240,7 +241,11 @@ class QuestionList {
         }
 
         private fun makeQuestion(q: Q): Question {
-            return Question(Random.Default.nextLong(), q.text, q.type)
+            return Question(
+                Random.nextLong(),
+                q.text,
+                q.type
+            )
         }
     }
 }

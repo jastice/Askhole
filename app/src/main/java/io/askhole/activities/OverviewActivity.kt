@@ -10,7 +10,7 @@ class OverviewActivity : BaseActivity() {
 
     override fun setup(savedInstanceState: Bundle?) {
         super.setup(savedInstanceState)
-        btnStartGame.setOnClickListener { goToActivity(MainActivity.newInstance(this)) }
+        btnStartGame.setOnClickListener { goToActivity(SwipeActivity.newInstance(this)) }
         btnAddSet.setOnClickListener {  }
         btnChooseSet.setOnClickListener {  }
     }

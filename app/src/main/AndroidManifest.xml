@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/askhole_star"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        >
+        android:name=".AskholeApplication"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name="io.askhole.SwipeActivity">
+        <activity android:name="io.askhole.activities.SwipeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>

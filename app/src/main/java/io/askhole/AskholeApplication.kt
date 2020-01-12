@@ -3,7 +3,6 @@ package io.askhole
 import android.app.Application
 import android.util.Log
 import com.facebook.stetho.Stetho
-import io.askhole.database.models.AskholeDatabase
 import io.askhole.database.models.Question
 import io.askhole.repositories.QuestionRepository
 
@@ -14,7 +13,8 @@ class AskholeApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Stetho.initializeWithDefaults(this.applicationContext)
-        AskholeDatabase.getInstance(this)
+
+        //TODO remove mock data generator
         QuestionRepository(this).insertQuestions(QuestionList.questions.map {
             Question(
                 text = it.text,

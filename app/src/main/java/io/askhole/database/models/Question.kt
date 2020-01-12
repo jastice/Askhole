@@ -13,6 +13,7 @@ import androidx.room.PrimaryKey
         childColumns = arrayOf("set_id"),
         onDelete = ForeignKey.CASCADE
     )]*/
+//TODO create question set for questionlist if not exist
 )
 data class Question(
     @ColumnInfo(name = "id")

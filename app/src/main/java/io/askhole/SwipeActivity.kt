@@ -18,7 +18,7 @@ class SwipeActivity : AppCompatActivity(), CardStackListener {
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
-    private val adapter by lazy { CardStackAdapter(QuestionList.randomQuestions(10)) }
+    private val adapter by lazy { CardStackAdapter(QuestionListCensored.randomQuestions(10)) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,7 +119,7 @@ class SwipeActivity : AppCompatActivity(), CardStackListener {
 
     private fun paginate() {
         val old = adapter.getQuestions()
-        val new = old.plus(QuestionList.randomQuestions(10))
+        val new = old.plus(QuestionListCensored.randomQuestions(10))
         val callback = QuestionDiffCallback(old, new)
         val result = DiffUtil.calculateDiff(callback)
         adapter.setQuestions(new)

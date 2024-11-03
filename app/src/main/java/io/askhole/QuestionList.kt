@@ -11,8 +11,7 @@ class QuestionList {
 
         data class Q(val text: String, val type: Question.Companion.QuestionType)
 
-
-        val questions = listOf(
+        private val questions = listOf(
             Q("At what age did you first begin experiencing existential or self-aware thoughts?",THOUGHTFUL),
             Q("A dragon demands a sacrifice. Either you can feed him a child, or your country can pool 1 trillion dollars to feed him instead. Which would you feed him?",THOUGHTFUL),
             Q("Your heart is failing and you need a new one. You have the ability to clone a healthy version of yourself, then before clone wakes up, kill him/her and take the heart. Do you do this?",THOUGHTFUL),
@@ -198,7 +197,7 @@ class QuestionList {
             Q("How do you feel about anal sex?",SEXY),
             Q("What was your most disappointing sexual experience?",SEXY),
             Q("When women say 'daddy' in a sexual context, do you find it more creepy or hot?",SEXY),
-            Q("Which would have more volume if you liquified and poured it into a glass - your balls or your penis?",SEXY),
+            Q("Which would have more volume if you liquefied and poured it into a glass - your balls or your penis?",SEXY),
             Q("Do you currently follow the same faith tradition of your parents?",GENERIC),
             Q("Have you ever been arrested? If not, how close have you come?",GENERIC),
             Q("If there were a way to painlessly and permanently alter the thoughts of a person you know, who and what would you change?",GENERIC),
